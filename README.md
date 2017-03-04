@@ -11,4 +11,4 @@ Default Structure for A Basic Project
 
 Java Project for SQA Boot Camp Program. 
 
-[William Chan](https://github.com/winglim701/basic-project.git)
+[William Chan](https://github.com/winglim701)
