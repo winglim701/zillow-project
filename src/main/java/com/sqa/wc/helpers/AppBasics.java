@@ -36,6 +36,29 @@ public class AppBasics {
 	}
 
 	/**
+	 * @param string
+	 * @return
+	 */
+	public static double requestDouble(String question) {
+		/**
+		 * @param question
+		 * @return
+		 */
+		String input;
+		double count = 0;
+		Scanner scanner = new Scanner(System.in);
+		System.out.println(question + " ");
+		input = scanner.nextLine();
+		try {
+			count = Integer.parseInt(input.trim());
+		} catch (NumberFormatException e) {
+			System.out
+					.println("You have not entered a correct numerical value (" + input + ")\n Using 0 for set value");
+		}
+		return count;
+	}
+
+	/**
 	 * Helper method to welcome user and return their supplied name.
 	 */
 	public static String welcomeUserAndName(String appName) {
