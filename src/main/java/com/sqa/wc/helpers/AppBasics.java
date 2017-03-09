@@ -36,7 +36,8 @@ public class AppBasics {
 	}
 
 	/**
-	 * @param question
+	 * @param get
+	 *            Boolean
 	 * @return
 	 */
 	public static boolean requestBoolean(String question) {
