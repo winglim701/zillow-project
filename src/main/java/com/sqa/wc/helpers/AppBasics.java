@@ -36,8 +36,7 @@ public class AppBasics {
 	}
 
 	/**
-	 * @param get
-	 *            Boolean
+	 * @param question
 	 * @return
 	 */
 	public static boolean requestBoolean(String question) {
@@ -65,11 +64,15 @@ public class AppBasics {
 		 * @return
 		 */
 		String input;
-		char character;
-		Scanner scanner = new Scanner(System.in);
+		char character = 'A';
 		System.out.println(question + " ");
 		input = scanner.nextLine();
-		character = input.charAt(0);
+		character = input.trim().charAt(0);
+		if (input.trim().length() > 1) {
+			System.out.println("You have entered more than one character (" + input + ")\nUsing 'A' for set value");
+		} else {
+			character = input.trim().charAt(0);
+		}
 		return character;
 	}
 
@@ -108,8 +111,7 @@ public class AppBasics {
 		try {
 			count = Float.parseFloat(input.trim());
 		} catch (NumberFormatException e) {
-			System.out
-					.println("You have not entered a correct numerical value (" + input + ")\n Using 0 for set value");
+			System.out.println("You have not entered a correct float value (" + input + ")\n Using 0 for set value");
 		}
 		return count;
 	}
@@ -150,8 +152,7 @@ public class AppBasics {
 		try {
 			count = Long.parseLong(input.trim());
 		} catch (NumberFormatException e) {
-			System.out
-					.println("You have not entered a correct numerical value (" + input + ")\n Using 0 for set value");
+			System.out.println("You have not entered a correct long value (" + input + ")\n Using 0 for set value");
 		}
 		return count;
 	}
@@ -169,8 +170,7 @@ public class AppBasics {
 		try {
 			count = Short.parseShort(input.trim());
 		} catch (NumberFormatException e) {
-			System.out
-					.println("You have not entered a correct numerical value (" + input + ")\n Using 0 for set value");
+			System.out.println("You have not entered a correct short value (" + input + ")\n Using 0 for set value");
 		}
 		return count;
 	}
