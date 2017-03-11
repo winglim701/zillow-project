@@ -35,6 +35,14 @@ public class AppBasics {
 		System.out.println("Thank you for using the " + appName + " app " + user + ", have a great day!");
 	}
 
+	public static String repeatString(String s, int n) {
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < n; i++) {
+			sb.append(s);
+		}
+		return sb.toString();
+	}
+
 	/**
 	 * @param question
 	 * @return
