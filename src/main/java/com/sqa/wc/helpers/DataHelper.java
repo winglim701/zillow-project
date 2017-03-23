@@ -9,7 +9,6 @@ import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.*;
 
-import com.google.common.collect.Table.*;
 import com.sqa.wc.helpers.exceptions.*;
 
 public class DataHelper {
