@@ -1,4 +1,4 @@
-package com.sqa.wc.helpers;
+package Enum;
 
 public enum TextFormat {
 	CSV, XML, TAB, JSON

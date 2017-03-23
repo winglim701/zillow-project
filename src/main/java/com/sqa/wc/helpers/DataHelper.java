@@ -11,6 +11,8 @@ import org.apache.poi.xssf.usermodel.*;
 
 import com.sqa.wc.helpers.exceptions.*;
 
+import Enum.*;
+
 public class DataHelper {
 
 	public static void clearArray(Object[][] array) {
