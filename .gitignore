@@ -21,6 +21,9 @@ local.properties
 .loadpath
 .recommenders
 
+#Test Reports
+test-output
+
 # Eclipse Core
 .project
 
