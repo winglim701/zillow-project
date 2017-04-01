@@ -2,47 +2,26 @@ package com.sqa.wc.core;
 
 import java.util.concurrent.*;
 
-import org.apache.log4j.*;
-import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.firefox.*;
 import org.openqa.selenium.ie.*;
 import org.openqa.selenium.safari.*;
 import org.testng.annotations.*;
 
-import com.sqa.wc.helpers.*;
-
-public abstract class BasicTest {
-
-	private WebDriver driver;
-	private String baseURL;
-	private Logger logger = Logger.getLogger(BasicTest.class);
+public abstract class BasicTest extends Core {
 
 	public BasicTest(String baseURL) {
-		super();
-		this.baseURL = baseURL;
+		super(null, baseURL);
 	}
 
-	public String getBaseURL() {
-		return this.baseURL;
-	}
-
-	public WebDriver getDriver() {
-		return this.driver;
-	}
-
-	public Logger getLogger() {
-		return this.logger;
-	}
-
-	@BeforeTest(enabled = true)
+	@BeforeTest(enabled = false)
 	public void setupChrome() {
-		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 		this.driver = new ChromeDriver();
 		this.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 
-	@BeforeTest(enabled = false)
+	@BeforeTest(enabled = true)
 	public void setupFirefox() {
 		this.driver = new FirefoxDriver();
 		this.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -65,13 +44,5 @@ public abstract class BasicTest {
 	@BeforeMethod
 	public void setupTest() {
 		this.driver.get(getBaseURL());
-	}
-
-	public boolean takeScreenshot(String fileName) {
-		fileName = fileName.replace(" ", "_");
-		fileName = fileName.replace("*", "");
-		fileName = fileName.replace("\"", "");
-		fileName = fileName.replace(",", "");
-		return AutoBasics.takeScreenshot(getDriver(), "screenshots/" + fileName, getLogger());
 	}
 }
